@@ -32,16 +32,16 @@ if choice == 'y':
         for i in range(len(options)):
             print("{0}. {1}".format(i + 1, options[i]))
         
-        while choice != 'q' or int(choice) < 1 or int(choice) > len(options):
-            choice = input("Enter the number corresponding to the correct answer ")
-            print(int(choice))
+        choice = input("Enter the number corresponding to the correct answer ")
 
         if choice == 'q':
-            print("Goodbye!")
+            print("Goodbye")
             break
-        elif choice > len(options) + 1:
+        elif int(choice) < 1 or int(choice) > len(options):
+            print(int(choice))
+        elif int(choice) > len(options) + 1 or len(choice) == 0:
             print("Invalid selection")
-        elif choice == answer:
+        elif int(choice) == answer:
             print(f"Success! {msg}")
         else:
             print(f"Wrong! {msg}")
